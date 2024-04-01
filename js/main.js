@@ -44,11 +44,13 @@ const downArrow = document.querySelector('.fold-icon-down');
 folder.addEventListener('click', () => {
   if (parkList.style.display == 'flex') {
     parkList.style.display = 'none';
+    folder.style.backgroundColor = '#fff';
     downArrow.classList.remove('hidden');
     upArrow.classList.add('hidden');
   } else {
     parkList.style.display = 'flex';
     parkList.style.border = '1px solid #d3d3d3';
+    folder.style.backgroundColor = '#ededed';
     downArrow.classList.add('hidden');
     upArrow.classList.remove('hidden');
   }
