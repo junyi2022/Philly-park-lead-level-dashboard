@@ -36,14 +36,29 @@ addressCheckbox.addEventListener('change', () => {
   }
 });
 
-// const parkEntry = document.querySelector('#entry');
-// const parkPopStyle = document.querySelector('.park-choices');
-// const addressPopStyle = document.querySelector('.address-choices');
-// if (parkEntry.value.toLowerCase() == ``) {
-//   parkPopStyle.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
-//   addressPopStyle.classList.add('hidden');
-// }
+// mobile view
+const folder = document.querySelector('.fold');
+const parkList = document.querySelector('.park-list-section');
+const upArrow = document.querySelector('.fold-icon-up');
+const downArrow = document.querySelector('.fold-icon-down');
+folder.addEventListener('click', () => {
+  if (parkList.style.display == 'flex') {
+    parkList.style.display = 'none';
+    downArrow.classList.remove('hidden');
+    upArrow.classList.add('hidden');
+  } else {
+    parkList.style.display = 'flex';
+    parkList.style.border = '1px solid #d3d3d3';
+    downArrow.classList.add('hidden');
+    upArrow.classList.remove('hidden');
+  }
+});
 
+// const legendMenu = document.querySelector('.mobile-menu');
+// const legend = document.querySelector('.legend');
+// legendMenu.addEventListener('click', () => {
+//   legend.style.display = 'block';
+// });
 
 // make things avaliable in every file
 

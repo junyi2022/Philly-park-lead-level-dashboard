@@ -4,10 +4,16 @@ fieldset {
     FONT-WEIGHT: 400;
     font-size: 0.8rem;
     color: rgb(61, 60, 60);
-    height: 5rem;
+    height: 100%;
     box-sizing: border-box;
     margin: 0;
     border-width: 1px;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #by-address,
@@ -23,6 +29,7 @@ legend {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 50%;
 }
 
 .input-choice{
@@ -86,15 +93,11 @@ legend {
 }
 
 #list-title {
-    font-size: 0.8rem;
-    margin: 0.2rem;
-}
-
-#list-title {
     font-size: 0.9rem;
     color: rgb(61, 60, 60);
-    height: 10%;
+    height: 16px;
     box-sizing: border-box;
+    margin: 0.2rem;
 }
 
 .park-list li {
@@ -129,4 +132,26 @@ legend {
     padding: 0.2rem;
     background-color: #f5efe5;
     margin: 2px;
+}
+
+
+/* mobile compatibility */
+
+@media screen and (width <= 1000px) {
+    .explain {
+        display: none;
+    }
+
+
+    #fold-title {
+        font-size: 0.9rem;
+        color: rgb(61, 60, 60);
+        height: 16px;
+        box-sizing: border-box;
+    }
+    
+
+    .park-list-section {
+        display: none;
+    }
 }

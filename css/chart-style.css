@@ -1,7 +1,6 @@
 #chart-title {
   font-size: 0.9rem;
   color: rgb(61, 60, 60);
-  height: 10%;
   box-sizing: border-box;
   display:block;
   margin: 1vh;
@@ -12,12 +11,11 @@
 
 
 #lead-level-chart {
-    position: absolute;
+    /* position: absolute; */
+    padding-top: 5rem;
     box-sizing: border-box;
-    margin-right: 1vh;
     width: 100%;
-    bottom: 4rem;
-    margin-bottom: 4%;
+    height: calc(100% - 16px); /* 16px is the height of the chart title */
 }
 
 #lead-level-chart .scale {
@@ -31,11 +29,11 @@
 }
 
 #lead-level-chart .safe-level {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: -1.5rem;
   left: 0;
   border-right: 2px solid rgb(85, 65, 65);
-  height: 3.5rem;
+  height: 4.5rem;
   box-sizing: border-box;
   transition: width 0.5s;
   /* calculate the relative width using log scale: 5.9914645471/9.8016762864 */
@@ -43,8 +41,8 @@
 }
 
 #lead-level-chart .level {
-  position: absolute;
-  top: -0.5rem;
+  position: relative;
+  top: -6.5rem;
   left: 0;
   border-right: 2px solid rgb(158, 65, 65);
   height: 2.5rem;
@@ -54,8 +52,9 @@
 }
 
 #lead-level-chart .level-label {
-    position: absolute;
-    top: -3rem;
+    position: relative;
+    width: fit-content;
+    top: -11rem;
     left: 0;
     font-size: 0.8rem;
     padding: 5px;
@@ -65,9 +64,9 @@
   }
 
 #safe-lead-level-description {
-    position: absolute;
-    right: 38.9%;
-    bottom: 0.2rem;
+    position: relative;
+    right: -2.5rem;
+    bottom: 5rem;
     box-sizing: border-box;
     font-size: 0.8rem;
     width: 9rem;
@@ -75,3 +74,38 @@
 }
 
 /* Bottom right chart style end */
+
+
+/* mobile compatibility  */
+
+@media screen and (width <= 450px) {
+
+  #lead-level-chart {
+    padding-top: 2.5rem;
+
+  }
+
+  #safe-lead-level-description {
+    bottom: 4rem;
+  }
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 450px) {
+
+  #safe-lead-level-description {
+    position: relative;
+    right: -2rem;
+    bottom: 4.5rem;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    width: 9rem;
+    text-align: center;
+  }
+
+  #lead-level-chart {
+    padding-top: 4rem;
+
+  }
+
+}

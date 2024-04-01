@@ -123,6 +123,9 @@ function calParkStyle(sample) {
 // legend part
 
 function legendStyle(map) {
+  const legendWrapper = document.createElement('div');
+  legendWrapper.classList.add('legend-wrapper');
+
   const legendDiv = document.createElement('div'); // abstract html div tag
   legendDiv.classList.add('legend'); // div class
 
@@ -172,7 +175,33 @@ function legendStyle(map) {
 
   legendDiv.appendChild(legendContent);
 
-  return legendDiv; // return html div
+  // add mobile control
+  const menuDiv = document.createElement('div'); // abstract html div tag
+  menuDiv.classList.add('mobile-menu'); // div class
+  menuDiv.innerHTML = '<i class="fa-solid fa-bars mobile-menu-icon"></i>'; // add html content
+
+  // const mobileMenuHTML = `
+  //   <div class="mobile-menu">
+  //     <i class="fa-solid fa-bars mobile-menu-icon"></i>
+  //   </div>
+  // `;
+
+  menuDiv.addEventListener('click', () => {
+    if (legendDiv.style.display == 'block') {
+      legendDiv.style.display = 'none';
+      menuDiv.style.backgroundColor = '#fff';
+    } else {
+      legendDiv.style.display = 'block';
+      menuDiv.style.backgroundColor = '#ededed';
+    }
+  });
+
+  legendWrapper.appendChild(legendDiv);
+  legendWrapper.appendChild(menuDiv);
+
+  // legendWrapper.innerHTML += mobileMenuHTML;
+
+  return legendWrapper; // return html div
 }
 
 // legend part END
@@ -184,6 +213,7 @@ import { phillyParkLayer } from './map.js';
 import { currentLocationLayer } from './map.js';
 import { routeLayer } from './map.js';
 import { setLeadLevel } from './chart.js';
+
 function backButtonStyle(map) {
   const backDiv = document.createElement('div');
   backDiv.classList.add('back-button'); // div class
