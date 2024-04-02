@@ -56,12 +56,6 @@ folder.addEventListener('click', () => {
   }
 });
 
-// const legendMenu = document.querySelector('.mobile-menu');
-// const legend = document.querySelector('.legend');
-// legendMenu.addEventListener('click', () => {
-//   legend.style.display = 'block';
-// });
-
 // make things avaliable in every file
 
 window.parks = parks;

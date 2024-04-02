@@ -5,6 +5,7 @@ fieldset {
     font-size: 0.8rem;
     color: rgb(61, 60, 60);
     height: 100%;
+    min-height: 70px;
     box-sizing: border-box;
     margin: 0;
     border-width: 1px;
@@ -30,6 +31,11 @@ legend {
     flex-direction: row;
     align-items: center;
     height: 50%;
+    min-height: 22px;
+}
+
+.input-box-group {
+    min-height: 22px;
 }
 
 .input-choice{
@@ -150,8 +156,4 @@ legend {
         box-sizing: border-box;
     }
     
-
-    .park-list-section {
-        display: none;
-    }
 }

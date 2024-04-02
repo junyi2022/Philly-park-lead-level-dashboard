@@ -180,12 +180,6 @@ function legendStyle(map) {
   menuDiv.classList.add('mobile-menu'); // div class
   menuDiv.innerHTML = '<i class="fa-solid fa-bars mobile-menu-icon"></i>'; // add html content
 
-  // const mobileMenuHTML = `
-  //   <div class="mobile-menu">
-  //     <i class="fa-solid fa-bars mobile-menu-icon"></i>
-  //   </div>
-  // `;
-
   menuDiv.addEventListener('click', () => {
     if (legendDiv.style.display == 'block') {
       legendDiv.style.display = 'none';
@@ -198,8 +192,6 @@ function legendStyle(map) {
 
   legendWrapper.appendChild(legendDiv);
   legendWrapper.appendChild(menuDiv);
-
-  // legendWrapper.innerHTML += mobileMenuHTML;
 
   return legendWrapper; // return html div
 }

@@ -15,6 +15,8 @@ function setLeadLevel(n) {
   // Set the text of the label
   leadLevelLabel.innerHTML = `<div id="chart-text" class="chart-pop"><strong>Lead Level:</strong> ${n.toFixed(2)} ppm</div>`;
 
+  // need to remove hidden class before get the width, otherwise it will exceed the width of the container when first click a park with a higher lead level
+  leadLevelLabel.classList.remove('hidden');
   // Set the location of the label
   const labelW = leadLevelLabel.offsetWidth;
   leadLevelLabel.style.left = `min(calc(100% - ${labelW + 1}px), ${scaledValue}%)`;
@@ -24,8 +26,6 @@ function setLeadLevel(n) {
   window.colorScale = colorScale;
   const color = colorScale(scaledValue/100);
   leadLevelLabel.style.backgroundColor = color;
-
-  leadLevelLabel.classList.remove('hidden');
 }
 
 export {

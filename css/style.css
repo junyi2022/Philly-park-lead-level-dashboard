@@ -45,7 +45,7 @@ main {
 }
 
 footer {
-    height: 2vh;
+    height: 3vh;
     font-size: 12px;
     box-sizing: border-box;
 }
@@ -93,18 +93,22 @@ a {
 .address-section {
     /* border: 1px solid green; */
     height: 17%;
+    min-height: calc(70px + 2vh);
+    max-height: 140px;
     padding: 1vh;
     box-sizing: border-box;
 }
 
 .park-list-section {
     /* border: 1px solid orange; */
-    height: 53%;
+    height: calc(100% - min(140px, 17%) - min(220px, 30%)); /* use address-section and lead-level-chart-wrapper height to specify park-section height */
+    min-height: 150px;
     padding: 1vh;
     box-sizing: border-box;
     /* flexbox is easy to fill the mother componet */
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .park-list {
@@ -117,6 +121,8 @@ a {
 .lead-level-chart-wrapper {
     /* border: 1px solid pink; */
     height: 30%;
+    /* min-height: 150px; */
+    max-height: 220px;
     width: 100%;
     box-sizing: border-box;
     position: relative;
@@ -186,14 +192,21 @@ a {
         margin-bottom: 1vh;
     }
 
+    .park-list-section {
+        display: none;
+    }
+
     .lead-level-chart-wrapper {
         height: calc(60% - 8px - 2.5vh);
+        min-height: 150px;
     }
   }
 
   @media screen and (max-width: 1000px) and (min-width: 450px) {
+
     .address-section {
-        height: calc(40% - 8px - 2.5vh);
+        /* height: 85px; */
+        min-height: 85px;
     }
 
     .fold {
@@ -202,12 +215,17 @@ a {
         height: 16px;
         padding: 1vh;
         border: 1px solid rgba(182, 182, 182, 0.8);
+        border-radius: 5px;
         margin-top: 1vh;
         margin-bottom: 1vh;
     }
 
+    .park-list-section {
+        display: none;
+    }
+
     .lead-level-chart-wrapper {
-        height: calc(60% - 8px - 2.5vh);
+        height: 60%;
     }
 
     .right-side {
