@@ -142,6 +142,7 @@ a {
 
 
 /* mobile compatibility */
+/* phone vertical */
 @media screen and (width <= 450px) {
 
     header {
@@ -200,9 +201,10 @@ a {
         height: calc(60% - 8px - 2.5vh);
         min-height: 150px;
     }
-  }
+}
 
-  @media screen and (max-width: 1000px) and (min-width: 450px) {
+/* phone horizontal, except iPad vertical */
+@media screen and (max-width: 1000px) and (min-width: 450px) and (max-height: 700px) {
 
     .address-section {
         /* height: 85px; */
@@ -231,4 +233,21 @@ a {
     .right-side {
         overflow: auto;
     }
-  }
+}
+
+/* iPad vertical */
+@media screen and (max-width: 1000px) and (min-width: 450px) and (max-height: 1000px) {
+
+    .address-section {
+        /* height: 85px; */
+        min-height: 85px;
+    }
+
+    .lead-level-chart-wrapper {
+        height: 60%;
+    }
+
+    .right-side {
+        overflow: auto;
+    }
+}
